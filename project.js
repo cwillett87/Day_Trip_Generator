@@ -2,6 +2,8 @@
 
 // As a developer, make at least three commits.
 
+// Day Trip Generator
+
 // As a user, Destination randomly generated for my day trip.
 
 let dest = [];
@@ -25,7 +27,19 @@ function genRanDest(ranDest){
 }
 
 genRanDest();// Function for randomly generated destination complete!
+
 // As a user, Restaurant to be randomly generated for my day trip.
+let rest = [];
+
+let restSel = ["Outback", "Apple Bees", "Ruby Tuesdays", "Red Lobster"];
+
+function genRanRest(ranRest){
+    let random = Math.floor(Math.random()*restSel.length);
+    ranRest = restSel[random];
+    rest.push(ranRest);
+    return rest;
+}
+genRanRest();// Function for randomly generated restaurant complete!
 
 // As a user, Mode of transportation to be randomly generated for my day trip.
 
