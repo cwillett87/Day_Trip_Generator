@@ -76,7 +76,7 @@ function genRanDayTrip(){
     genRanDest();
     genRanRest();
     genRanTran();
-    let ent = genRanEnt();
+    genRanEnt();
     dayTrip.push(dest,rest,trans,ent);
     console.log(dayTrip.toString());// add a space at the start of strings in selections
 
@@ -84,10 +84,10 @@ function genRanDayTrip(){
 
 genRanDayTrip();// Function calling all randomly generated selections for day trip complete!
 
-//prompt user "if" they would like to "re-selct" any of the selections
-
 // As a user, I want to be able to randomly re-select a dest, rest, trans, and/or ent
 // If I don't like one or more of those things.
+
+//prompt user "if" they would like to "re-selct" any of the selections
 
 // As a user, I want to be able to confirm that my day trip is "complete" 
 // once I like all of the random selections.
