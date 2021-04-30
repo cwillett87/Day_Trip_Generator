@@ -8,23 +8,23 @@ let dest = [];
 
 let destSel = ['Miami, FL','Long Beach, CA','Outer Banks, NC','Bahamas'];
 
-let random = Math.floor(Math.random()*destSel.length);
+// let random = Math.floor(Math.random()*destSel.length);
 
-let ranDest = destSel[random];
-console.log(ranDest); // Random destination successful!
+// let ranDest = destSel[random];
+// console.log(ranDest); // Random destination successful! 
 
-function genRanDest(destSel){
+// Now create a function to generate 
+//and push random destination to dest[]; 
+//and return dest to be used again later!
 
-
-    for( let i=0; i<destSel.length; i++){
-        
-        dest.push(Math.floor(Math.random().toString()));
-        console.log(dest);
-    }
+function genRanDest(ranDest){
+    let random = Math.floor(Math.random()*destSel.length);
+    ranDest = destSel[random];
+    dest.push(ranDest);
     return dest;
 }
 
-genRanDest(destSel);
+genRanDest();// Function for randomly generated destination complete!
 // As a user, Restaurant to be randomly generated for my day trip.
 
 // As a user, Mode of transportation to be randomly generated for my day trip.
