@@ -71,6 +71,10 @@ function genRanEnt(ranEnt){
 // console new array 
 
 let dayTrip = [];
+dayTrip[0] = dest
+dayTrip[1] = rest
+dayTrip[2] = trans
+dayTrip[3] = ent
 
 function genRanDayTrip(){
     genRanDest();
@@ -88,6 +92,44 @@ genRanDayTrip();// Function calling all randomly generated selections for day tr
 // If I don't like one or more of those things.
 
 //prompt user "if" they would like to "re-selct" any of the selections
+let userinput = prompt("Would you like to change any of the selections?");
+
+switch(userinput){
+    case "yes":
+        let input = prompt("Which selection would you like to change? (destination, restaurant, transpotation, entertainment)");
+        
+        switch(input){
+            case "destination":
+                let user = prompt("Choose one of the following! (Miami FL, Long Beach CA, Outer Banks NC, Bahamas)");
+                dayTrip[0].push(user);
+                prompt(userinput);
+                break;
+            case "restaurant":
+                let user = prompt("Choose one of the following! (Outback, Apple Bees, Ruby Tuesdays, Red Lobster");
+                dayTrip[1].push(user);
+                prompt(userinput);
+                break;
+            case "transportation":
+                let user = prompt("Choose one of the following! (Plane, Train, Vehicle, Boat");
+                dayTrip[2].push(user);
+                prompt(userinput);
+                break;
+            case "entertainment":
+                let user = prompt("Choose one of the following! (Live Music, Theater, Football Game, Netflix)");
+                dayTrip[3].push(user);
+                prompt(userinput);
+                break;
+            default:
+                alert("Please enter one of the following: destination, restaurant, tranportation or entertainment!");
+                prompt(input);
+        }
+
+    case "no":
+
+    default:
+        alert("Try again!");
+        break;
+}
 
 // As a user, I want to be able to confirm that my day trip is "complete" 
 // once I like all of the random selections.
