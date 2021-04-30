@@ -55,6 +55,17 @@ function genRanTran(ranTran){
 genRanTran();// Function for randomly generated transportation complete!
 
 // As a user, Form of entertainment to be randomly generated for my day trip.
+let ent = [];
+
+let entSel = ["Live Music", "Theater", "Football Game", "Netflix"];
+
+function genRanEnt(ranEnt){
+    let random = Math.floor(Math.random()*entSel.length);
+    ranEnt = entSel[random];
+    ent.push(ranEnt);
+    return ent;
+}
+genRanEnt();// Function for randomly generated entertainment complete!
 
 // As a user, I want to be able to randomly re-select a dest, rest, trans, and/or ent
 // If I don't like one or more of those things.
