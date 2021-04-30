@@ -42,6 +42,17 @@ function genRanRest(ranRest){
 genRanRest();// Function for randomly generated restaurant complete!
 
 // As a user, Mode of transportation to be randomly generated for my day trip.
+let trans = [];
+
+let tranSel = ["Plane", "Train", "Vehicle", "Boat"];
+
+function genRanTran(ranTran){
+    let random = Math.floor(Math.random()*tranSel.length);
+    ranTran = tranSel[random];
+    trans.push(ranTran);
+    return trans;
+}
+genRanTran();// Function for randomly generated transportation complete!
 
 // As a user, Form of entertainment to be randomly generated for my day trip.
 
