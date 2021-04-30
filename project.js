@@ -8,7 +8,7 @@
 
 let dest = [];
 
-let destSel = ['Miami, FL','Long Beach, CA','Outer Banks, NC','Bahamas'];
+let destSel = ['Miami FL','Long Beach CA','Outer Banks NC','Bahamas'];
 
 // let random = Math.floor(Math.random()*destSel.length);
 
@@ -26,12 +26,12 @@ function genRanDest(ranDest){
     return dest;
 }
 
-genRanDest();// Function for randomly generated destination complete!
+// Function for randomly generated destination complete!
 
 // As a user, Restaurant to be randomly generated for my day trip.
 let rest = [];
 
-let restSel = ["Outback", "Apple Bees", "Ruby Tuesdays", "Red Lobster"];
+let restSel = [" Outback", " Apple Bees", " Ruby Tuesdays", " Red Lobster"];
 
 function genRanRest(ranRest){
     let random = Math.floor(Math.random()*restSel.length);
@@ -39,12 +39,12 @@ function genRanRest(ranRest){
     rest.push(ranRest);
     return rest;
 }
-genRanRest();// Function for randomly generated restaurant complete!
+// Function for randomly generated restaurant complete!
 
 // As a user, Mode of transportation to be randomly generated for my day trip.
 let trans = [];
 
-let tranSel = ["Plane", "Train", "Vehicle", "Boat"];
+let tranSel = [" Plane", " Train", " Vehicle", " Boat"];
 
 function genRanTran(ranTran){
     let random = Math.floor(Math.random()*tranSel.length);
@@ -52,12 +52,11 @@ function genRanTran(ranTran){
     trans.push(ranTran);
     return trans;
 }
-genRanTran();// Function for randomly generated transportation complete!
+// Function for randomly generated transportation complete!
 
 // As a user, Form of entertainment to be randomly generated for my day trip.
 let ent = [];
-
-let entSel = ["Live Music", "Theater", "Football Game", "Netflix"];
+let entSel = [" Live Music", " Theater", " Football Game", " Netflix"];
 
 function genRanEnt(ranEnt){
     let random = Math.floor(Math.random()*entSel.length);
@@ -65,7 +64,27 @@ function genRanEnt(ranEnt){
     ent.push(ranEnt);
     return ent;
 }
-genRanEnt();// Function for randomly generated entertainment complete!
+// Function for randomly generated entertainment complete!
+
+// Create a function to call each "genRan" function to generate our "Day trip"
+// Create a new array to push all the random "selections" into
+// console new array 
+
+let dayTrip = [];
+
+function genRanDayTrip(){
+    genRanDest();
+    genRanRest();
+    genRanTran();
+    let ent = genRanEnt();
+    dayTrip.push(dest,rest,trans,ent);
+    console.log(dayTrip.toString());// add a space at the start of strings in selections
+
+}
+
+genRanDayTrip();// Function calling all randomly generated selections for day trip complete!
+
+//prompt user "if" they would like to "re-selct" any of the selections
 
 // As a user, I want to be able to randomly re-select a dest, rest, trans, and/or ent
 // If I don't like one or more of those things.
