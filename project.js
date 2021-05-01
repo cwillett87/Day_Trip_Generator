@@ -10,7 +10,7 @@ let dest = [];
 dest[0]= " Destination: ";
 
 
-let destSel = ['Miami FL','Long Beach CA','Outer Banks NC','Bahamas'];
+let destSel = ['Miami FL','Long Beach CA','Outer Banks NC','Bahamas','Richmond VA','Dallas TX','HollyWood CA'];
 
 // let random = Math.floor(Math.random()*destSel.length);
 
@@ -34,7 +34,7 @@ function genRanDest(ranDest){
 // As a user, Restaurant to be randomly generated for my day trip.
 let rest = [];
 rest[0]=" Restaurant: ";
-let restSel = [" Outback", " Apple Bees", " Ruby Tuesdays", " Red Lobster"];
+let restSel = [" Outback", " Apple Bees", " Ruby Tuesdays", " Red Lobster"," Olive Garden"," Chines Takeout"," Popa Johm's"];
 
 function genRanRest(ranRest){
     let random = Math.floor(Math.random()*restSel.length);
@@ -48,7 +48,7 @@ function genRanRest(ranRest){
 // As a user, Mode of transportation to be randomly generated for my day trip.
 let trans = [];
 trans[0]=" Transportation: ";
-let tranSel = [" Plane", " Train", " Vehicle", " Boat"];
+let tranSel = [" Plane", " Train", " Vehicle", " Boat"," Skateboard"," Kayak"," On foot"];
 
 function genRanTran(ranTran){
     let random = Math.floor(Math.random()*tranSel.length);
@@ -62,7 +62,7 @@ function genRanTran(ranTran){
 // As a user, Form of entertainment to be randomly generated for my day trip.
 let ent = [];
 ent[0]=" Entertainment: ";
-let entSel = [" Live Music", " Theater", " Football Game", " Netflix"];
+let entSel = [" Live Music", " Theater", " Football Game", " Netflix"," Surfing"," Zip Linning"," Dance Club"];
 
 function genRanEnt(ranEnt){
     let random = Math.floor(Math.random()*entSel.length);
@@ -201,7 +201,10 @@ function chSel(change){//Function prompting user to enter a selection to change
     if(change==="entertainment"){
         reGenEnt();
     }
-confirm();
+    else{
+        change=prompt("Enter which selection to change: (destination, restaurant, transportation, entertainment)");
+    }
+    confirm();
 }
 
 // As a user, I want to be able to confirm that my day trip is "complete" 
