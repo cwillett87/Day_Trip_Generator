@@ -8,6 +8,8 @@
 
 let dest = [];
 dest[0]= " Destination: ";
+
+
 let destSel = ['Miami FL','Long Beach CA','Outer Banks NC','Bahamas'];
 
 // let random = Math.floor(Math.random()*destSel.length);
@@ -23,6 +25,7 @@ function genRanDest(ranDest){
     let random = Math.floor(Math.random()*destSel.length);
     ranDest = destSel[random];
     dest.push(ranDest);
+    dest[1]= ranDest;
     return dest;
 }
 
@@ -37,6 +40,7 @@ function genRanRest(ranRest){
     let random = Math.floor(Math.random()*restSel.length);
     ranRest = restSel[random];
     rest.push(ranRest);
+    rest[1]=ranRest;
     return rest;
 }
 // Function for randomly generated restaurant complete!
@@ -50,6 +54,7 @@ function genRanTran(ranTran){
     let random = Math.floor(Math.random()*tranSel.length);
     ranTran = tranSel[random];
     trans.push(ranTran);
+    trans[1]=ranTran;
     return trans;
 }
 // Function for randomly generated transportation complete!
@@ -63,6 +68,7 @@ function genRanEnt(ranEnt){
     let random = Math.floor(Math.random()*entSel.length);
     ranEnt = entSel[random];
     ent.push(ranEnt);
+    ent[1]=ranEnt;
     return ent;
 }
 // Function for randomly generated entertainment complete!
@@ -98,12 +104,13 @@ genRanDayTrip();// Function calling all randomly generated selections for day tr
 let userinput;
 let userInput;
 confirm();
-
+// Function re-generating selections
 let regendest;
 function reGenDest(regendest){
     regendest = prompt("Would you like to randomly generate this selection? (yes or no)");
     if(regendest==="yes"){
-        dest[1]=genRanDest();
+        dest=genRanDest();//Setting array to "new" random selection
+        dest.splice(2);//Splicing out "old" selection
     }
     else if(regendest==="no"){
         chDest();
@@ -115,7 +122,8 @@ function reGenRest(regenrest){
     regenrest = prompt("Would you like to randomly generate this selection? (yes or no)");
     if(regenrest==="yes"){
         
-        rest[1]=genRanRest();
+        rest=genRanRest();
+        rest.splice(2);
     }
     else if(regenrest==="no"){
         chRest();
@@ -126,7 +134,8 @@ function reGenTran(regentran){
     regentran = prompt("Would you like to randomly generate this selection? (yes or no)");
     if(regentran==="yes"){
         
-        trans[1]=genRanTran();
+        trans=genRanTran();
+        trans.splice(2);
     }
     else if(regentran==="no"){
         chTran();
@@ -137,7 +146,8 @@ function reGenEnt(regenent){
     regenent = prompt("Would you like to randomly generate this selection? (yes or no)");
     if(regenent==="yes"){
         
-        ent[1]=genRanEnt();
+        ent=genRanEnt();
+        ent.splice(2);
     }
     else if(regenent==="no"){
         chEnt();
@@ -145,31 +155,35 @@ function reGenEnt(regenent){
 }
 
 let userOne;
-function chDest(userOne){
+function chDest(userOne){// Function giving the user the option to manually input selection
     userOne = prompt("please enter the destination of your choice!");
-    dest[1]=userOne;
+    dest[1]=userOne;// Setting user input at new index of array
+    dest.splice(2);// Splicing out "old" selections
 }
 
 let usertwo;
 function chRest(usertwo){
     usertwo = prompt("please enter the restaurant of your choice!");
         rest[1]=(usertwo);
+        rest.splice(2);
 }
 
 let userthree;
 function chTran(userthree){
     userthree = prompt("please enter the transportation of your choice!");
     trans[1]=(userthree);
+    trans.splice(2);
 }     
       
 let userfour;
 function chEnt(userfour){
     userfour = prompt("please enter the entertainment of your choice!");
     ent[1]=(userfour);
+    ent.splice(2);
 }
 
 let change;
-function chSel(change){
+function chSel(change){//Function prompting user to enter a selection to change
     change=prompt("Enter which selection to change: (destination, restaurant, transportation, entertainment)");
 
     if(change=="destination"){
