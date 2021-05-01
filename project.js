@@ -7,7 +7,7 @@
 // As a user, Destination randomly generated for my day trip.
 
 let dest = [];
-
+dest[0]= " Destination: ";
 let destSel = ['Miami FL','Long Beach CA','Outer Banks NC','Bahamas'];
 
 // let random = Math.floor(Math.random()*destSel.length);
@@ -30,7 +30,7 @@ function genRanDest(ranDest){
 
 // As a user, Restaurant to be randomly generated for my day trip.
 let rest = [];
-
+rest[0]=" Restaurant: ";
 let restSel = [" Outback", " Apple Bees", " Ruby Tuesdays", " Red Lobster"];
 
 function genRanRest(ranRest){
@@ -43,7 +43,7 @@ function genRanRest(ranRest){
 
 // As a user, Mode of transportation to be randomly generated for my day trip.
 let trans = [];
-
+trans[0]=" Transportation: ";
 let tranSel = [" Plane", " Train", " Vehicle", " Boat"];
 
 function genRanTran(ranTran){
@@ -56,6 +56,7 @@ function genRanTran(ranTran){
 
 // As a user, Form of entertainment to be randomly generated for my day trip.
 let ent = [];
+ent[0]=" Entertainment: ";
 let entSel = [" Live Music", " Theater", " Football Game", " Netflix"];
 
 function genRanEnt(ranEnt){
@@ -71,6 +72,7 @@ function genRanEnt(ranEnt){
 // console new array 
 
 let dayTrip = [];
+
 dayTrip[0] = dest
 dayTrip[1] = rest
 dayTrip[2] = trans
@@ -81,8 +83,8 @@ function genRanDayTrip(){
     genRanRest();
     genRanTran();
     genRanEnt();
-    dayTrip.push(dest,rest,trans,ent);
-    console.log(dayTrip.toString());// add a space at the start of strings in selections
+    // dayTrip.push(dest,rest,trans,ent);
+    // console.log(dayTrip.toString());// add a space at the start of strings in selections
 
 }
 
@@ -92,49 +94,41 @@ genRanDayTrip();// Function calling all randomly generated selections for day tr
 // If I don't like one or more of those things.
 
 //prompt user "if" they would like to "re-selct" any of the selections
-let userinput = prompt("Would you like to change any of the selections?");
+let userinput = prompt("Would you like to change the selections? " + dayTrip.toString() + " (yes or no)");
 
-switch(userinput){
-    case "yes":
-        let input = prompt("Which selection would you like to change? (destination, restaurant, transpotation, entertainment)");
-        
-        switch(input){
-            case "destination":
-                let user = prompt("Choose one of the following! (Miami FL, Long Beach CA, Outer Banks NC, Bahamas)");
-                dayTrip[0].push(user);
-                prompt(userinput);
-                break;
-            case "restaurant":
-                let user = prompt("Choose one of the following! (Outback, Apple Bees, Ruby Tuesdays, Red Lobster");
-                dayTrip[1].push(user);
-                prompt(userinput);
-                break;
-            case "transportation":
-                let user = prompt("Choose one of the following! (Plane, Train, Vehicle, Boat");
-                dayTrip[2].push(user);
-                prompt(userinput);
-                break;
-            case "entertainment":
-                let user = prompt("Choose one of the following! (Live Music, Theater, Football Game, Netflix)");
-                dayTrip[3].push(user);
-                prompt(userinput);
-                break;
-            default:
-                alert("Please enter one of the following: destination, restaurant, tranportation or entertainment!");
-                prompt(input);
-        }
+if(userinput === "yes"){
+    
+    let userOne = prompt("please enter the destination of your choice!");
+        dest[1]=(userOne);
+                
+        let usertwo = prompt("please enter the restaurant of your choice!");
+        rest[1]=(usertwo);
 
-    case "no":
+            let userthree = prompt("please enter the transportation of your choice!");
+            trans[1]=(userthree);
+                
+            let userfour = prompt("please enter the entertainment of your choice!");
+            ent[1]=(userfour);
 
-    default:
-        alert("Try again!");
-        break;
-}
-
+            let userFInput=prompt("Are you sure you're satisfied with your trip?" + dayTrip.toString() + " (yes or no)")
+            if(userFInput==="yes"){
+                console.log(dayTrip.toString());// As a user, I want to display my completed trip in the console.
+            }
+            else if(userFInput==="no"){
+                alert("Please start from the beginning!");
+            }
+}                    
 // As a user, I want to be able to confirm that my day trip is "complete" 
 // once I like all of the random selections.
-
-// As a user, I want to display my completed trip in the console.
+    else if(userinput=== "no"){
+        let userInput=prompt("Are you sure you're satisfied with your trip? (yes or no)")
+            if(userInput==="yes"){
+                console.log(dayTrip.toString());// As a user, I want to display my completed trip in the console.
+            }
+            else if(userInput==="no"){
+                alert("Please start from the beginning!");
+            }
+    }
 
 // As a developer, I want all of my functions to have a single resposibility.
 // Remember, each function should do just one thing!
