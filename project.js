@@ -99,11 +99,55 @@ let userinput;
 let userInput;
 confirm();
 
-"use strict"
+let regendest;
+function reGenDest(regendest){
+    regendest = prompt("Would you like to randomly generate this selection? (yes or no)");
+    if(regendest==="yes"){
+        dest[1]=genRanDest();
+    }
+    else if(regendest==="no"){
+        chDest();
+    }
+    
+}
+let regenrest;
+function reGenRest(regenrest){
+    regenrest = prompt("Would you like to randomly generate this selection? (yes or no)");
+    if(regenrest==="yes"){
+        
+        rest[1]=genRanRest();
+    }
+    else if(regenrest==="no"){
+        chRest();
+    }
+}
+let regentran;
+function reGenTran(regentran){
+    regentran = prompt("Would you like to randomly generate this selection? (yes or no)");
+    if(regentran==="yes"){
+        
+        trans[1]=genRanTran();
+    }
+    else if(regentran==="no"){
+        chTran();
+    }
+}
+let regenent;
+function reGenEnt(regenent){
+    regenent = prompt("Would you like to randomly generate this selection? (yes or no)");
+    if(regenent==="yes"){
+        
+        ent[1]=genRanEnt();
+    }
+    else if(regenent==="no"){
+        chEnt();
+    }
+}
+
 let userOne;
 function chDest(userOne){
     userOne = prompt("please enter the destination of your choice!");
-        dest[1]=(userOne);
+    dest[1]=userOne;
 }
 
 let usertwo;
@@ -129,35 +173,23 @@ function chSel(change){
     change=prompt("Enter which selection to change: (destination, restaurant, transportation, entertainment)");
 
     if(change=="destination"){
-        chDest();
+        reGenDest();
     }
 
     if(change==="restaurant"){
-        chRest();
+        reGenRest();
     }
 
     if(change==="transportation"){
-        chTran();
+        reGenTran();
     }
 
     if(change==="entertainment"){
-        chEnt();
+        reGenEnt();
     }
 confirm();
 }
 
-// function chTrip(userinput){
-//     userinput = prompt("Would you like to change the selections? " + dayTrip.toString() + " (yes or no)");
-// if(userinput === "yes"){
-
-//             chSel();
-
-// }              
-//     else if(userinput=== "no"){
-//         confirm();
-            
-//     }
-// }
 // As a user, I want to be able to confirm that my day trip is "complete" 
 // once I like all of the random selections.
 function confirm(userInput){
