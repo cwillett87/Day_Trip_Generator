@@ -97,40 +97,76 @@ genRanDayTrip();// Function calling all randomly generated selections for day tr
 
 let userinput;
 let userInput;
-chTrip();
-function chTrip(userinput){
-    userinput = prompt("Would you like to change the selections? " + dayTrip.toString() + " (yes or no)");
-if(userinput === "yes"){
-    
-    let userOne = prompt("please enter the destination of your choice!");
+confirm();
+
+"use strict"
+let userOne;
+function chDest(userOne){
+    userOne = prompt("please enter the destination of your choice!");
         dest[1]=(userOne);
-                
-        let usertwo = prompt("please enter the restaurant of your choice!");
-        rest[1]=(usertwo);
-
-            let userthree = prompt("please enter the transportation of your choice!");
-            trans[1]=(userthree);
-                
-            let userfour = prompt("please enter the entertainment of your choice!");
-            ent[1]=(userfour);
-
-            confirm();
-
-}              
-    else if(userinput=== "no"){
-        confirm();
-            
-    }
 }
+
+let usertwo;
+function chRest(usertwo){
+    usertwo = prompt("please enter the restaurant of your choice!");
+        rest[1]=(usertwo);
+}
+
+let userthree;
+function chTran(userthree){
+    userthree = prompt("please enter the transportation of your choice!");
+    trans[1]=(userthree);
+}     
+      
+let userfour;
+function chEnt(userfour){
+    userfour = prompt("please enter the entertainment of your choice!");
+    ent[1]=(userfour);
+}
+
+let change;
+function chSel(change){
+    change=prompt("Enter which selection to change: (destination, restaurant, transportation, entertainment)");
+
+    if(change=="destination"){
+        chDest();
+    }
+
+    if(change==="restaurant"){
+        chRest();
+    }
+
+    if(change==="transportation"){
+        chTran();
+    }
+
+    if(change==="entertainment"){
+        chEnt();
+    }
+confirm();
+}
+
+// function chTrip(userinput){
+//     userinput = prompt("Would you like to change the selections? " + dayTrip.toString() + " (yes or no)");
+// if(userinput === "yes"){
+
+//             chSel();
+
+// }              
+//     else if(userinput=== "no"){
+//         confirm();
+            
+//     }
+// }
 // As a user, I want to be able to confirm that my day trip is "complete" 
 // once I like all of the random selections.
 function confirm(userInput){
-    userInput= prompt("Are you sure you're satisfied with your trip?" + dayTrip.toString() + "  (yes or no)");
+    userInput= prompt("Are you satisfied with your trip?" + dayTrip.toString() + "  (yes or no)");
     if(userInput==="yes"){
         console.log(dayTrip.toString());// As a user, I want to display my completed trip in the console.
     }
     else if(userInput==="no"){
-        chTrip();
+        chSel();
     }
 
 }
