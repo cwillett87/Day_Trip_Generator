@@ -202,7 +202,7 @@ function chSel(change){//Function prompting user to enter a selection to change
         reGenEnt();
     }
     else{
-        change=prompt("Enter which selection to change: (destination, restaurant, transportation, entertainment)");
+        
     }
     confirm();
 }
