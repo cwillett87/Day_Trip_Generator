@@ -94,8 +94,12 @@ genRanDayTrip();// Function calling all randomly generated selections for day tr
 // If I don't like one or more of those things.
 
 //prompt user "if" they would like to "re-selct" any of the selections
-let userinput = prompt("Would you like to change the selections? " + dayTrip.toString() + " (yes or no)");
 
+let userinput;
+let userInput;
+chTrip();
+function chTrip(userinput){
+    userinput = prompt("Would you like to change the selections? " + dayTrip.toString() + " (yes or no)");
 if(userinput === "yes"){
     
     let userOne = prompt("please enter the destination of your choice!");
@@ -110,25 +114,25 @@ if(userinput === "yes"){
             let userfour = prompt("please enter the entertainment of your choice!");
             ent[1]=(userfour);
 
-            let userFInput=prompt("Are you sure you're satisfied with your trip?" + dayTrip.toString() + " (yes or no)")
-            if(userFInput==="yes"){
-                console.log(dayTrip.toString());// As a user, I want to display my completed trip in the console.
-            }
-            else if(userFInput==="no"){
-                alert("Please start from the beginning!");
-            }
-}                    
+            confirm();
+
+}              
+    else if(userinput=== "no"){
+        confirm();
+            
+    }
+}
 // As a user, I want to be able to confirm that my day trip is "complete" 
 // once I like all of the random selections.
-    else if(userinput=== "no"){
-        let userInput=prompt("Are you sure you're satisfied with your trip? (yes or no)")
-            if(userInput==="yes"){
-                console.log(dayTrip.toString());// As a user, I want to display my completed trip in the console.
-            }
-            else if(userInput==="no"){
-                alert("Please start from the beginning!");
-            }
+function confirm(userInput){
+    userInput= prompt("Are you sure you're satisfied with your trip?" + dayTrip.toString() + "  (yes or no)");
+    if(userInput==="yes"){
+        console.log(dayTrip.toString());// As a user, I want to display my completed trip in the console.
+    }
+    else if(userInput==="no"){
+        chTrip();
     }
 
+}
 // As a developer, I want all of my functions to have a single resposibility.
 // Remember, each function should do just one thing!
